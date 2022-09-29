@@ -1,10 +1,11 @@
 import { useParams, Outlet } from "react-router-dom";
-import { fetchDetails } from "Service/Service";
+import { fetchDetails } from "../../Service/Service";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
+import React from "react";
 
-export const MovieDetails = () => {
+export const MovieDetails = (): JSX.Element => {
   const { movieId } = useParams();
   const [details, setDetails] = useState();
   const location = useLocation();

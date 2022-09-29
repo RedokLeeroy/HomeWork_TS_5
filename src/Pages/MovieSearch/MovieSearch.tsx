@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
-import { SearchBar } from "components/SearchBar/SearchBar";
+import { SearchBar } from "../../components/SearchBar/SearchBar";
 import { useSearchParams } from "react-router-dom";
-import { fetchSearchMovies } from "Service/Service";
-import { mapper } from "components/utils/Mapper";
-import { Links } from "components/Links/Links";
+import { fetchSearchMovies } from "../../Service/Service";
+import { mapper } from "../../components/utils/Mapper";
+import { Links } from "../../components/Links/Links";
 import { nanoid } from "nanoid";
 import { toast } from "react-toastify";
-import { GoHomePage } from "components/GoHomePage/GoHomePage";
+import { GoHomePage } from "../../components/GoHomePage/GoHomePage";
+import React from "react";
 
-export const MovieSearch = () => {
+export const MovieSearch = ():JSX.Element => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [searchData, setSearchData] = useState(null);
+  const [searchData, setSearchData] = useState<[{}] | null >(null);
   const searchRequest = searchParams.get("q") ?? "";
 
   useEffect(() => {
@@ -22,7 +23,7 @@ export const MovieSearch = () => {
     );
   }, [searchRequest]);
 
-  const handleSubmit = (search) => {
+  const handleSubmit = (search: string) => {
     if (!search) {
       toast.error("Input some Text");
       return;

@@ -1,13 +1,15 @@
-import { Links } from "components/Links/Links";
+
 import { nanoid } from "nanoid";
 import { useState, useEffect } from "react";
-import { fetchTrendings } from "Service/Service";
-import { mapper } from "components/utils/Mapper";
+import { fetchTrendings } from "../../Service/Service";
+import { mapper } from "../../components/utils/Mapper";
+import { Links } from "../../components/Links/Links";
+import React from "react";
 
-export const Trend = () => {
-  const [trendings, setTrendings] = useState([]);
+export const Trend = (): JSX.Element => {
+  const [trendings, setTrendings] = useState<[]>([]);
 
-  useEffect(() => {
+  useEffect(():void => {
     fetchTrendings().then(({ data }) => setTrendings(mapper(data)));
   }, []);
 
