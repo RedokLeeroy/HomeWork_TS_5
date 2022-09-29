@@ -23,7 +23,7 @@ export const MovieDetails = (): JSX.Element => {
         <div>
           <button
             type="button"
-            onClick={() => navigate(location?.state?.from ?? "/")}
+            onClick={() => navigate((location?.state as Location & { from: Location })?.from ?? "/")}
           >
             Go Back
           </button>
