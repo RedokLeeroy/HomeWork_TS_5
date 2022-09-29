@@ -5,8 +5,9 @@ import { NavLink } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
 import React from "react";
 
+
 export const MovieDetails = (): JSX.Element => {
-  const { movieId } = useParams();
+  const { movieId } = useParams<string>();
   const [details, setDetails] = useState();
   const location = useLocation();
   const navigate = useNavigate();
