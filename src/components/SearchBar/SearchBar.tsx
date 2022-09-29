@@ -1,15 +1,15 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
+import React from "react";
 
-export const SearchBar = ({ onSubmit }) => {
+export const SearchBar = ({ onSubmit }: {onSubmit: (arg: string) => void}):JSX.Element => {
   const [search, setSearch] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.MouseEvent<HTMLFormElement>) => {
     event.preventDefault();
     onSubmit(search);
   };
 
-  const handleInput = (event) => {
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
 
@@ -23,8 +23,4 @@ export const SearchBar = ({ onSubmit }) => {
       </form>
     </>
   );
-};
-
-SearchBar.propTypes = {
-  SearchBar: PropTypes.func,
 };

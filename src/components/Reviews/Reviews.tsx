@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchReviews } from "Service/Service";
+import { fetchReviews } from "../../Service/Service";
+import React from "react";
 
-export const Reviews = () => {
+export const Reviews = ():JSX.Element => {
 
-   const [reviews, setReviews] = useState()
-    const {movieId} = useParams();
+   const [reviews, setReviews] = useState<{results: {id:number, author: string, content:string}[]}>()
+    const {movieId} = useParams<string>();
           useEffect(() =>{
 
     fetchReviews(movieId).then(({data}) => setReviews(data))

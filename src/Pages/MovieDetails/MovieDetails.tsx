@@ -4,11 +4,12 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useLocation, useNavigate } from "react-router-dom";
 import React from "react";
+import { IData } from "../../Interfaces";
 
 
 export const MovieDetails = (): JSX.Element => {
   const { movieId } = useParams<string>();
-  const [details, setDetails] = useState();
+  const [details, setDetails] = useState<Partial<IData>>();
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -45,7 +46,7 @@ export const MovieDetails = (): JSX.Element => {
             </p>
             <p>
               Genres:
-              <span>{details.genres.map((genre) => genre.name).join(",")}</span>
+              <span>{details?.genres?.map((genre) => genre.name).join(",")}</span>
             </p>
           </div>
           <ul>

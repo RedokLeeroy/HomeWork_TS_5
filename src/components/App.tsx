@@ -1,7 +1,8 @@
-import LoaderSpinner from "./Loader/Loader";
+import {LoaderSpinner} from "./Loader/Loader";
 import { Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { GoHomePage } from "./GoHomePage/GoHomePage";
+import React from "react";
 
 const MovieDetailsLazy = lazy(() => import("../Pages/MovieDetails"));
 const MovieSearchLazy = lazy(() => import("../Pages/MovieSearch"));
@@ -10,7 +11,7 @@ const TrendLazy = lazy(() => import("../Pages/Trends"));
 const CastLazy = lazy(() => import("./Cast"));
 const ReviewsLazy = lazy(() => import("./Reviews"));
 
-export const App = () => {
+export const App = (): JSX.Element => {
   return (
     <Suspense fallback={<LoaderSpinner />}>
       <Routes>

@@ -8,10 +8,11 @@ import { nanoid } from "nanoid";
 import { toast } from "react-toastify";
 import { GoHomePage } from "../../components/GoHomePage/GoHomePage";
 import React from "react";
+import { IData } from "../../Interfaces";
 
 export const MovieSearch = ():JSX.Element => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [searchData, setSearchData] = useState<[{}] | null >(null);
+  const [searchData, setSearchData] = useState<Partial<IData>[] | null >(null);
   const searchRequest = searchParams.get("q") ?? "";
 
   useEffect(() => {

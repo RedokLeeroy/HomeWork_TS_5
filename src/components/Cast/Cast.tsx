@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchCredits } from "Service/Service";
+import { fetchCredits } from "../../Service/Service";
+import React from "react";
+import { ICast } from "../../Interfaces";
 
-export const Cast = () => {
-   const [credits, setCredits] = useState()
+export const Cast = ():JSX.Element => {
+   const [credits, setCredits] = useState<{cast:Partial<ICast>[]}>()
     const {movieId} = useParams();
           useEffect(() =>{
 

@@ -2,11 +2,10 @@ import React from "react";
 import styles from "./Loader.module.css";
 import { BallTriangle } from "react-loader-spinner";
 
-export default function LoaderSpinner() {
+export const LoaderSpinner = ():JSX.Element => {
   return (
     <div className={styles.loader}>
       <BallTriangle
-        type="BallTriangle"
         color="#3f51b5"
         height={200}
         width={200}

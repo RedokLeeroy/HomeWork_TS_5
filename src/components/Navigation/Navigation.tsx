@@ -1,7 +1,8 @@
 import { Link } from "./Navigation.styled";
 import { ListUl } from "./Navigation.styled";
+import React from "react";
 
-export const Navigation = () => {
+export const Navigation = (): JSX.Element => {
   return (
     <nav>
       <ListUl>

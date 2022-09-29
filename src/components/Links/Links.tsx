@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import PropTypes from "prop-types";
+import React from "react";
+import { IData } from "../../Interfaces";
 
-export const Links = ({ id, title, name }) => {
+export const Links = ({ id, title, name }: Partial<IData>):JSX.Element => {
   const location = useLocation();
   return (
     <li>
@@ -13,8 +14,3 @@ export const Links = ({ id, title, name }) => {
   );
 };
 
-Links.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string,
-  name: PropTypes.string,
-};
