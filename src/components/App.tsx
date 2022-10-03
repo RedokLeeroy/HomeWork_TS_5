@@ -15,7 +15,7 @@ export const App = (): JSX.Element => {
   return (
     <Suspense fallback={<LoaderSpinner />}>
       <Routes>
-        <Route path="/" element={<LayoutLazy />}>
+        <Route path="/" element={<LayoutLazy />}> 
           <Route index element={<TrendLazy />} />
           <Route path="/movies" element={<MovieSearchLazy />}></Route>
           <Route path="/movies/:movieId" element={<MovieDetailsLazy />}>
@@ -29,3 +29,4 @@ export const App = (): JSX.Element => {
     </Suspense>
   );
 };
+//HELO I'm UNDER THE WOTAR
